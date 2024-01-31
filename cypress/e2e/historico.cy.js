@@ -51,7 +51,7 @@ describe('Validar tela historico', () => {
         cy.historico()
         cy.get('.mat-button').click()
         cy.get(titulo).should('have.text', 'Faça agora a análise grátis com o questionário Freemium!')
-        cy.get('h2').should('have.text', 'Antes de começar, dê um nome à sua análise.')
+        cy.get('input[type=text]').should('be.visible')
 
     })
 

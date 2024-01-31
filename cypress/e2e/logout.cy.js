@@ -144,7 +144,7 @@ describe('Validar funcionalidade logout', () => {
                 .should('have.text', 'Empresa já cadastrada. ')
             cy.get('.mat-mdc-menu-trigger > .name').scrollIntoView().wait(1000)
             cy.get('.mat-mdc-menu-trigger > .name').click({ force: true })
-            cy.get('.mat-mdc-menu-content > :nth-child(9)').click().wait(1000)
+            cy.get('.mat-mdc-menu-content > :nth-child(8)').click().wait(1000)
             cy.get('#mat-input-13').type('cahogiv954@wuzak.com')
             cy.get('#mat-input-14').type('P@ssw0rd')
             cy.contains('button', 'Entrar').click().wait(2000)

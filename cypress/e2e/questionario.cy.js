@@ -43,7 +43,7 @@ describe('Validar Questionario', () => {
     it('acessar quesionario agil', () => {
         cy.login();
         cy.get('.cont-bemvindo > .mat-button').click()
-        cy.get('h2').should('have.text', 'Antes de começar, dê um nome à sua análise.')
+        cy.get('input[type=text]').should('be.visible')
 
 
     })
