@@ -13,7 +13,7 @@ describe('Validar tela historico', () => {
     })
 
     it('filtro vazio', ()=> {
-        cy.get('#mat-input-0').type('jicag74409@tsderp.com')
+        cy.get('#mat-input-0').type('geneh94191@wentcity.com')
         cy.get('#mat-input-1').type('P@ssw0rd')
         cy.contains('button', 'Entrar').click()
         cy.historico()
@@ -26,7 +26,9 @@ describe('Validar tela historico', () => {
     
 
     it('historico vazio', ()=> {
-        cy.loginNewUser()
+        cy.get('#mat-input-0').type('geneh94191@wentcity.com')
+        cy.get('#mat-input-1').type('P@ssw0rd')
+        cy.contains('button', 'Entrar').click()
         cy.historico()
         cy.get('.content-no-analisys > p').should('have.text', 'Você ainda não tem análises disponíveis. Faça a sua primeira análise grátis agora mesmo!')
        

@@ -18,7 +18,7 @@ describe('fluxo de sucesso', () => {
 
     it('alterar senha com sucesso', () => {
         cy.visit('/')  //abre a pagina principal do site
-        cy.get('#mat-input-0').type('sosiw54061@konican.com')
+        cy.get('#mat-input-0').type('lafotoh133@wuzak.com')
         cy.get('#mat-input-1').type('P@ssw0rd')
         cy.contains('.mat-button', 'Entrar').click()
         cy.get('.name').click()
@@ -31,7 +31,7 @@ describe('fluxo de sucesso', () => {
         cy.get('.name').click()
         cy.get('p:contains("Sair")').click()
         cy.get('#mat-input-5').should('be.visible')
-            .type('sosiw54061@konican.com')
+            .type('lafotoh133@wuzak.com')
         cy.get('#mat-input-6').type('P@ssw0rd123')
         cy.get('.mat-button').click().wait(1000)
         cy.title().wait(2000).should('eq', 'Dekodi')
@@ -40,7 +40,7 @@ describe('fluxo de sucesso', () => {
 
     it('confirmar alteracao de senha', () => {
         cy.visit('/')  //abre a pagina principal do site
-        cy.get('#mat-input-0').type('sosiw54061@konican.com')
+        cy.get('#mat-input-0').type('lafotoh133@wuzak.com')
         cy.get('#mat-input-1').type('P@ssw0rd123')
         cy.contains('.mat-button', 'Entrar').click()
         cy.get('.name').click()

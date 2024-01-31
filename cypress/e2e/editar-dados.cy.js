@@ -11,7 +11,6 @@ describe('Validar funcionalidade Edicao de Dados', () => {
     var name = faker.name.firstName();
     var name2 = faker.name.lastName();
 
-
     beforeEach(() => {
         cy.visit('/')
         cy.login()
@@ -80,7 +79,7 @@ describe('Validar funcionalidade Edicao de Dados', () => {
         cy.get('#usuarioForm_telefone').wait(1000)
             .type('{selectall}').clear()
         cy.get('#usuarioForm_telefone').click().type(telefone)
-        cy.get('#empresaForm_numero').click().type('{selectall}').clear()
+        cy.get('#empresaForm_numero').wait(1000).click().type('{selectall}').clear()
             .type(numero)
         cy.get('.justify-end > .mat-button').click().wait(1000)
         cy.get('.content > p').should('be.visible')
@@ -109,7 +108,7 @@ describe('Validar funcionalidade Edicao de Dados', () => {
 
         beforeEach(() => {
             cy.visit('/')
-        cy.get('#mat-input-0').type('dekages461@konican.com')
+        cy.get('#mat-input-0').type('hoyat96107@wentcity.com')
         cy.get('#mat-input-1').type('P@ssw0rd')
         cy.contains('button', 'Entrar').click()
         cy.editarDados()
@@ -126,10 +125,3 @@ describe('Validar funcionalidade Edicao de Dados', () => {
     })
 
 })
-
-
-
-
-
-
-

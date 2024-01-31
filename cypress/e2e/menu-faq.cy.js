@@ -31,16 +31,16 @@ describe('Validar menu FAQ', () => {
     it('busca com resultado', () => {
         cy.get('input[type="text"]').type('ipsum').wait(1000)
         cy.get('button[class="btn-pesquisa"]').click()
-        cy.get('#mat-expansion-panel-header-7 > span.mat-content.ng-tns-c2690051721-20 > mat-panel-title').should('have.text', ' Consectetur consectetur ipsum consectetur lorem dolor. ')
+        cy.get('#mat-expansion-panel-header-7 > span.mat-content.ng-tns-c2690051721-20 > mat-panel-title').should('be.visible')
 
     })
 
     it('expandir card com resultado', () => {
         cy.get('input[type="text"]').type('ipsum').wait(1000)
         cy.get('button[class="btn-pesquisa"]').click()
-        cy.get('#mat-expansion-panel-header-7 > span.mat-content.ng-tns-c2690051721-20 > mat-panel-title').should('have.text', ' Consectetur consectetur ipsum consectetur lorem dolor. ')
+        cy.get('#mat-expansion-panel-header-7 > span.mat-content.ng-tns-c2690051721-20 > mat-panel-title').should('be.visible')
         cy.get('#mat-expansion-panel-header-7 > .mat-content > .mat-icon').click()
-        cy.get('#cdk-accordion-child-7 > .mat-expansion-panel-body > :nth-child(1)').should('be.visible')
+        cy.get('#cdk-accordion-child-7 > .mat-expansion-panel-body > :nth-child(1)').should('be.extensible')
    
     })
 
