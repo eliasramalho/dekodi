@@ -147,7 +147,7 @@ describe('Validar Questionario', () => {
 
     })
 
-    it('CNPJ ja cadastrado', () => {
+    it('modal CNPJ ja cadastrado', () => {
         cy.get('#mat-input-0').type('nacaxo1242@tsderp.com')
         cy.get('#mat-input-1').type('P@ssw0rd')
         cy.contains('button', 'Entrar').click()
@@ -161,7 +161,7 @@ describe('Validar Questionario', () => {
 
     })
 
-    it('modal de dados com CNPJ nao encontrada', () => {
+    it('modal CNPJ nao encontrada', () => {
         cy.get('#mat-input-0').type('nacaxo1242@tsderp.com')
         cy.get('#mat-input-1').type('P@ssw0rd')
         cy.contains('button', 'Entrar').click()

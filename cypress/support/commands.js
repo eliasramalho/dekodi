@@ -78,8 +78,8 @@ Cypress.Commands.add('responderAleatorio', () => {
   cy.get('label[for="mat-radio-194-input"]').click()
   cy.get('label[for="mat-radio-202-input"]').click()
   cy.get('label[for="mat-radio-206-input"]').click()
-  cy.get('label[for="mat-radio-214-input"]').click()
-  cy.get(finalizar).click().wait(2000)
+  cy.get('label[for="mat-radio-214-input"]').click().wait(1000)
+  cy.get(finalizar).click().wait(1000)
 
 })
 
@@ -118,7 +118,7 @@ Cypress.Commands.add('questionarioSetorial', () => {
   cy.get('label[for="mat-radio-196-input"]').click()
   cy.get('label[for="mat-radio-201-input"]').click()
   cy.get('label[for="mat-radio-211-input"]').click()
-  cy.get('label[for="mat-radio-213-input"]').click()
+  cy.get('label[for="mat-radio-213-input"]').click().wait(1000)
   cy.get(finalizar).click().wait(2000)
 
 })
@@ -158,8 +158,8 @@ Cypress.Commands.add('questionarioOperacional', () => {
   cy.get('label[for="mat-radio-194-input"]').click()
   cy.get('label[for="mat-radio-201-input"]').click()
   cy.get('label[for="mat-radio-211-input"]').click()
-  cy.get('label[for="mat-radio-217-input"]').click()
-  cy.get(finalizar).click().wait(2000)
+  cy.get('label[for="mat-radio-217-input"]').click().wait(1000)
+  cy.get(finalizar).click().wait(1000)
 
 })
 
@@ -198,8 +198,8 @@ Cypress.Commands.add('questionarioProcessual', () => {
   cy.get('label[for="mat-radio-194-input"]').click()
   cy.get('label[for="mat-radio-201-input"]').click()
   cy.get('label[for="mat-radio-211-input"]').click()
-  cy.get('label[for="mat-radio-213-input"]').click()
-  cy.get(finalizar).click().wait(2000)
+  cy.get('label[for="mat-radio-213-input"]').click().wait(1000)
+  cy.get(finalizar).click().wait(1000)
 
 })
 
@@ -252,13 +252,3 @@ Cypress.Commands.add('alterarSenha', () => {
   cy.get(alterarSenha).should('be.visible').click()
 
 })
-
-
-
-
-
-
-
-
-
-

@@ -2,19 +2,13 @@
 const faker = require('faker');
 
 describe('fluxo de sucesso', () => {
-    const gerarSenha = senhaAleatoria()
+    
     //elementos da tela de editar senha
     const msgErro = '#mat-mdc-error-3'
     const senhaAtual = '#mat-input-2'
     const novaSenha = '#mat-input-3'
     const confSenha = '#mat-input-4'
     const continuar = '.cont-btn > .mat-button'
-
-    // funcao para gerar senha alatoria
-    function senhaAleatoria() {
-        const senha = faker.internet.password(8, false, /[A-Z]/, /[0-9]/, /[\W_]/);
-        return senha;
-    }
 
     it('alterar senha com sucesso', () => {
         cy.visit('/')  //abre a pagina principal do site
