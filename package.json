@@ -4,7 +4,8 @@
   "description": "Projeto de testes automatizados Dekodi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:test": "npx cypress run",
+    "cypress:gui": "npx cypress open"
   },
   "author": "Elias Ramalho",
   "license": "MIT",
