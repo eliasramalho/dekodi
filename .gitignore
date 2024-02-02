@@ -1,0 +1,5 @@
+node_modules
+cypress/videos
+cypreeee/screenshots
+results
+results/*.xml
