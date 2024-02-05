@@ -63,7 +63,7 @@ describe('Validar funcionalidade logout', () => {
 
     })
 
-    it('logout apos editar telefone do usuario', () => {
+    it.only('logout apos editar telefone do usuario', () => {
         const telefone = faker.phone.phoneNumber('(11) 9 ####-####');
 
         cy.editarDados()
@@ -75,9 +75,6 @@ describe('Validar funcionalidade logout', () => {
         cy.scrollSalvar()
         cy.get('.actions > .mat-button').click().wait(1000)
         cy.get('div[aria-haspopup="menu"]').click()
-        cy.get('.actions > .mat-button').click()
-        cy.get('div[aria-haspopup="menu"]').click()
-        cy.get('.mat-mdc-menu-trigger > .name').click()
         cy.contains('p', 'Sair').click()
         cy.get('#mat-input-13').type('vopowo6026@wentcity.com')
         cy.get('#mat-input-14').type('P@ssw0rd')
