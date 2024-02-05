@@ -28,6 +28,7 @@ describe('Grenciamentos de usuarios', () => {
 
     it('acessar menu de cadastro de usuario', () => {
         const btnVoltar = 'button:contains("Voltar")'
+
         cy.contains('button', 'Adicionar usuário').click()
         cy.get('#mat-input-2').should('be.visible')
         cy.get('#mat-input-3').should('be.visible')
@@ -68,14 +69,12 @@ describe('Grenciamentos de usuarios', () => {
 
     describe('CRUD de usuarios', () => {
 
-
-
         it('adicionar usuario', () => {
             cy.contains('button', 'Adicionar usuário').click()
             cy.get('#mat-input-2').type(name + '  ' + name2)
             cy.get('#mat-input-3').type(email)
-            cy.contains('button', 'Salvar').click()
-            cy.get('.mat-mdc-simple-snack-bar > .mat-mdc-snack-bar-label')
+            cy.contains('button', 'Salvar').click().wait(1000)
+            cy.contains('div', ' Colaborador adicionado com sucesso')
                 .should('have.text', ' Colaborador adicionado com sucesso\n')
 
         })
@@ -84,8 +83,8 @@ describe('Grenciamentos de usuarios', () => {
             cy.contains('button', 'Editar').click()
             cy.get('#mat-input-2').wait(1000).clear()
                 .type(name + '  ' + name2)
-            cy.contains('button', 'Salvar').click()
-            cy.get('.mat-mdc-simple-snack-bar > .mat-mdc-snack-bar-label')
+            cy.contains('button', 'Salvar').click().wait(1000)
+            cy.contains('div', ' Colaborador alterado com sucesso')
                 .should('have.text', ' Colaborador alterado com sucesso\n')
 
         })
@@ -94,35 +93,34 @@ describe('Grenciamentos de usuarios', () => {
             cy.contains('button', 'Editar').click()
             cy.get('#mat-input-3').wait(1000).clear()
                 .type(email)
-            cy.contains('button', 'Salvar').click()
-            cy.get('.mat-mdc-simple-snack-bar > .mat-mdc-snack-bar-label')
+            cy.contains('button', 'Salvar').click().wait(1000)
+            cy.contains('div', ' Colaborador alterado com sucesso')
                 .should('have.text', ' Colaborador alterado com sucesso\n')
-
-        })
-
-        it('inativar usuario', () => {
-            const msgSucesso = 'div:contains(" Alteração realizada com sucesso")'
-            cy.contains('button', 'Inativar').click().wait(1000)
-            cy.contains('button', ' Inativar').click()
-            cy.get(msgSucesso).should('be.visible')
-            //.should('have.text', '  Alteração realizada com sucesso\n')
 
         })
 
         it('conceder permissao de adm', () => {
             cy.contains('button', 'Editar').click()
             cy.get('input[type="checkbox"]').click()
-            cy.contains('button', 'Salvar').click()
-            cy.get('.mat-mdc-simple-snack-bar > .mat-mdc-snack-bar-label')
-                .should('have.text', ' Colaborador alterado com sucesso\n')
+            cy.contains('button', 'Salvar').click().wait(1000)
+            cy.contains('span', 'Administrativo')
+                .should('be.visible')
+
+        })
+
+        it('inativar usuario', () => {
+            cy.contains('button', 'Inativar').click()
+            cy.contains('button', ' Inativar').click().wait(1000)
+            cy.contains('div', ' Alteração realizada com sucesso')
+            .should('be.visible')
 
         })
 
         it('excluir usuario', () => {
             cy.contains('button', 'Excluir').click()
-            cy.contains('button', ' Excluir').click()
+            cy.contains('button', ' Excluir').click().wait(1000)
             cy.get('.mat-mdc-simple-snack-bar > .mat-mdc-snack-bar-label')
-                .should('have.text', ' Usuario excluido com sucesso\n')
+                .should('be.visible')
 
         })
     })

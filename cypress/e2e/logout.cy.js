@@ -43,7 +43,6 @@ describe('Validar funcionalidade logout', () => {
         cy.get('#mat-radio-255-input').should('be.checked')
         cy.get('#mat-radio-261-input').should('not.be.checked')
 
-
     })
 
     it('logout apos editar nome do usuario', () => {
@@ -54,14 +53,13 @@ describe('Validar funcionalidade logout', () => {
         cy.get('.content > p').should('be.visible')
         cy.scrollSalvar()
         cy.get('.actions > .mat-button').click().wait(1000)
-        cy.get('app-root app-header .mat-mdc-menu-trigger').click()
+        cy.get('div[aria-haspopup="menu"]').click()
         cy.contains('p', 'Sair').click()
         cy.get('#mat-input-13').type('vopowo6026@wentcity.com')
         cy.get('#mat-input-14').type('P@ssw0rd')
         cy.get('.mat-button').click().wait(1000)
         cy.editarDados()
         cy.get('#usuarioForm_nome').should('have.value', name + '  ' + name2)
-
 
     })
 
@@ -75,11 +73,8 @@ describe('Validar funcionalidade logout', () => {
         cy.get('.justify-end > .mat-button').click()
         cy.get('.content > p').should('be.visible')
         cy.scrollSalvar()
-        cy.get('.actions > .mat-button').click()
-<<<<<<< HEAD
+        cy.get('.actions > .mat-button').click().wait(1000)
         cy.get('div[aria-haspopup="menu"]').click()
-=======
-        cy.get('.mat-mdc-menu-trigger > .name').click()
         cy.contains('p', 'Sair').click()
         cy.get('#mat-input-13').type('vopowo6026@wentcity.com')
         cy.get('#mat-input-14').type('P@ssw0rd')
