@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "5onxiq",
   e2e: {
     baseUrl: 'https://app.dev.dekodi.com.br',
     defaultCommandTimeout: 10000,
