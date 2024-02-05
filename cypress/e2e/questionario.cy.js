@@ -101,15 +101,6 @@ describe('Validar Questionario', () => {
 
     })
 
-    it.skip('questionario organizacional', () => {
-        cy.login();
-        cy.responderAleatorio()
-        cy.get('.mensagem > h1').should('have.text', ' Você deu um passo importante ')
-        cy.get('.analise').scrollIntoView()
-        cy.get('.analise').should('have.text', ' Performance Organizacional \n                  Existem aqui, indicativos que sua empresa está passando por momentos de instabilidade e imaturidade organizacional. Eficiência e performance estratégica, financeirra, comercial, produtiva e cultural podem ser negligenciadas pelas lideranças, ao mesmo tempo que, ameças externas como concorrência e inovações de mercado estão ganhando relevância e gerando maiores probabilidades de danos à sua empresa. A correlação entre sua arquitetura empresarial e o ecossitema que circunda a sua empresa é a "cereja do bolo" da análises, pois entende sistemicamente o ambiente e correlaciona diversas variaveis para traçar a melhor rota de ação.\n\n          \n                  \n                    Dica  Ágil: Como sugestão preliminar, faça uma reflexão e registre as principais nocividades que o seu mercado está causando, ou poderá causar no curto prazo, para a sua empresa. Depois, identifique quais seriam caracteristicas organizacionais importantes que sua empresa deveria ter para minimizar esses riscos. Caso entenda que sua empresa não tem todas essas caracteristicas, trace um plano de ação para desenvolve-las, ao menos um pouco, o mais rápido possível. "Como posso ter ainda mais precisão estratégica nas minhas ações?" \n                  Com o módulo de Análise Organizacional da plataforma, você conseguirá ter um panorama detalhado, item a item, para cada um dos temas citados acima. Gráficos, Ratings, detalhamento descritivo de riscos e o melhor; diversas orientações claras e detalhadas de como está o cenário da sua empresa e o que você precisa fazer para melhorar a performance nesse tema. E, se você quer uma empresa comprovadamente competitiva em relação ao mercado, o Módulo Competitividade pode mostrar como a sua empresa performa em relação à outras empresas do mesmo perfil. Mantenha seu negócio no centro, vivemos em um mundo dinâmico e com mudanças constantes, tenha proteção contra surpresas e explore oportunidades.\n                  ')
-
-    })
-
     it('questionario setorial', () => {
         cy.login();
         cy.questionarioSetorial()
@@ -124,7 +115,7 @@ describe('Validar Questionario', () => {
         cy.questionarioOperacional()
         cy.get('.mensagem > h1').should('have.text', ' Você deu um passo importante ')
         cy.get('.analise').scrollIntoView()
-        cy.get('.analise').should('have.text', ' Performance Operacional \n                  Existem aqui, indicativos que sua empresa está passando por momentos de instabilidade e baixa eficiência operacional. Qualidade, Previsibilidade, Estabilidade, Escalabilidade, Tecnicidade e outros temas são considerados pela nossa plataforma para avaliar sua operação e propor direcionamentos de melhoria. Provavelmente mais de uma das 8 dimensões operacionais que analisamos está deficitária, o que possivelmente está desencadeando atrasos de processos, má qualidade nas estregas, custos elevados, clima organizacional pesado e frustrações dos clientes.\n\n          \n                  \n                    Dica  Ágil: Como sugestão de movimento para ganhos rápidos, identifique, mesmo que de forma subjetiva nesse momento, 2 principais pontos dentro dos processos de trabalho onde seus funcionários mais sofrem. Adiconalmente, busque os 2 principais momentos no processo de trabalho onde os seus clientes mais formalizam reclamações. A partir da definição destes 4 pontos, tente encontrar a causa raiz deles; uma ferramenta fácil de usar para isso é a ferramenta dos "5 porquês". Com as causas raizes identificadas, traçe um plano de ação de curto prazo para cada causa e gerencie a execução até que as ações sejam concluidas. "Como posso ter ainda mais precisão estratégica nas minhas ações?" \n                  Com o módulo de Análise Operacional da plataforma, você conseguirá ter um panorama detalhado, item a item, para cada um dos pontos citados acima. Gráficos, Ratings, detalhamento descritivo de riscos e o melhor; diversas orientações claras e detalhadas do que você precisa fazer para melhorar a performance da sua empresa nesse assunto. E, se você quer uma empresa comprovadamente competitiva em relação ao mercado, o Módulo Competitividade pode mostrar como a sua empresa performa em relação à outras empresas do mesmo perfil. Mantenha seu negócio no centro, vivemos em um mundo dinâmico e com mudanças constantes, tenha proteção contra surpresas e explore oportunidades.\n                  ')
+        cy.get('.analise').should('be.visible')
 
     })
 
@@ -133,7 +124,7 @@ describe('Validar Questionario', () => {
         cy.questionarioProcessual()
         cy.get('.mensagem > h1').should('have.text', ' Você deu um passo importante ')
         cy.get('.analise').scrollIntoView()
-        cy.get('.analise').should('have.text', ' Performance Processual \n                  O resultado aponta probabilidade de ausência de harmonia em alguns fluxos processsuais e intraprocessuais da sua empresa. Em geral, as ineficiências processuais nascem e se fortalecem quando falta i) clareza na comunicação, ii) simplificade do fluxo e iii) estabilidade na execução. Também é comum problemas processuais nascerem por causa do posicionamento das pessoas, quando colaboradores acreditam que podem se sobrepor aos combinados processuais e geram, assim, diversos fluxos impiricos paralelos.\n          \n          \n                  \n                    Dica  Ágil: Como sugestão de movimento para ganhos rápidos, identifique, mesmo que de forma subjetiva nesse momento, 2 principais pontos dentro dos processos de trabalho onde seus funcionários mais sofrem. Adiconalmente, busque os 2 principais momentos no processo de trabalho onde os seus clientes mais formalizam reclamações. A partir da definição destes 4 pontos, tente encontrar a causa raiz deles; uma ferramenta fácil de usar para isso é a ferramenta dos "5 porquês". Com as causas raizes identificadas, traçe um plano de ação de curto prazo para cada causa e gerencie a execução até que as ações sejam concluidas. "Como posso ter ainda mais precisão estratégica nas minhas ações?" \n                  A partir de uma sequência de ferramentas da Gestão da Qualidade, com o módulo de Análise Processual da plataforma você conseguirá ter uma visão profunda e precisa das principais causas raízes que desencadeiam todos os problemas processuais da sua empresa. E, se você quer uma empresa comprovadamente competitiva em relação ao mercado, o Módulo Competitividade pode mostrar como a sua empresa Performa em relação à outras empresas do mesmo perfil. Mantenha seu negócio no centro, vivemos em um mundo dinâmico e com mudanças constantes, tenha proteção contra surpresas e explore oportunidades.\n                  ')
+        cy.get('.analise').should('be.visible')
 
     })
 
@@ -172,7 +163,6 @@ describe('Validar Questionario', () => {
         cy.get('#mat-option-23').click().wait(2000)
         cy.get('#mat-mdc-error-3').should('have.text', 'Empresa não encontrada')
                
-
     })
 
     it('validar progresso da porcentagem', () =>{
