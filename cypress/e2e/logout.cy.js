@@ -76,7 +76,11 @@ describe('Validar funcionalidade logout', () => {
         cy.get('.content > p').should('be.visible')
         cy.scrollSalvar()
         cy.get('.actions > .mat-button').click()
+<<<<<<< HEAD
         cy.get('div[aria-haspopup="menu"]').click()
+=======
+        cy.get('.mat-mdc-menu-trigger > .name').click()
+>>>>>>> 987fdad0509ba6a2080d7cc1e05bcd28551a27a0
         cy.contains('p', 'Sair').click({ force: true })
         cy.get('#mat-input-13').type('vopowo6026@wentcity.com')
         cy.get('#mat-input-14').type('P@ssw0rd')
