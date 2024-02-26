@@ -15,10 +15,10 @@ describe('Validar tela de boas vindas', ()=> {
     })
     
     it('validar presenca de botoes para analise agil', ()=> {
-        cy.get('.mat-button > span').should('have.text', 'Fazer grátis sua Análise Guia')
-        cy.get('.box-texto-btn > .mat-button').should('have.text', ' Fazer analise ')
-        cy.get('.btn-plano').should('have.text', 'Fazer grátis sua Análise Guia ')
-        cy.contains('span','Análise Guia').should('have.text', 'Análise Guia')
+        cy.contains('p', 'Análise Guia').should('have.text', 'Análise Guia')
+        cy.contains('span', 'Faça grátis sua Análise Guia').should('have.text', 'Faça grátis sua Análise Guia')
+        cy.contains('button', ' Fazer analise ').should('have.text', ' Fazer analise ')
+        cy.contains('button','Faça grátis sua Análise Guia ').should('have.text', 'Faça grátis sua Análise Guia ')
 
 
     })

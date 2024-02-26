@@ -1,4 +1,5 @@
 describe('Validar tela historico', () => {
+    const titulo = '.box-title > h1'
 
     beforeEach(()=>{
         cy.visit('/');
@@ -36,21 +37,19 @@ describe('Validar tela historico', () => {
     })
 
     it('iniciar analise a partir do historico', ()=>{
-        const titulo = '.box-title > h1'
         cy.login()
         cy.historico()
         cy.get('.mat-button').click()
-        cy.get(titulo).should('have.text', 'Faça agora a análise grátis com o questionário Freemium!')
+        cy.get(titulo).should('have.text', 'Faça agora uma análise grátis!')
 
 
     })
     
     it('modal nome da analise', ()=>{
-        const titulo = '.box-title > h1'
         cy.login()
         cy.historico()
         cy.get('.mat-button').click()
-        cy.get(titulo).should('have.text', 'Faça agora a análise grátis com o questionário Freemium!')
+        cy.get(titulo).should('have.text', 'Faça agora uma análise grátis!')
         cy.get('input[type=text]').should('be.visible')
 
     })
