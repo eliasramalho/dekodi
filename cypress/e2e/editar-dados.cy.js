@@ -38,7 +38,7 @@ describe('Validar funcionalidade Edicao de Dados', () => {
         cy.contains('button',' Editar').click()
         cy.get('input[type=file]').attachFile(fileName).wait(1000);
         cy.get('.actions > .mat-button').click()
-        cy.get('.info > .name').should('be.visible')
+        cy.get('mat-mdc-menu-trigger btn-perfil').should('be.visible')
 
     })
 
